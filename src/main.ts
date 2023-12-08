@@ -3,7 +3,7 @@ import router from './router'
 import store from './store'
 import App from './App.vue'
 import type { MessageApiInjection } from 'naive-ui/lib/message/src/MessageProvider'
-
+import './assets/css/app.less'
 // 通用字体
 import 'vfonts/Lato.css'
 // 等宽字体
