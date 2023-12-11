@@ -10,14 +10,19 @@
         </div>
       </div>
       <!-- <img /> -->
-      <n-icon :component="EllipsisHorizontal" />
+      <n-icon :component="EllipsisHorizontal" size="24px" class="cursor-pointer" />
 
     </div>
-    <div>#小红书#</div>
-    <div>{{ item.content }}</div>
+    <div class="my-[8px]">#小红书#</div>
+    <div class="mb-[10px]">{{ item.content }}</div>
     <span class="border border-solid border-[] rounded-[2px] px-[6px] py-[2px]">{{ item.tag }}</span>
-    <div class="flex justify-between">
-      <div>一键三连</div>
+    <div class="flex justify-between mt-[10px]">
+      <div>
+        <n-icon :component="HappyOutline" size="20px" class="mr-[8px] cursor-pointer" />
+        <n-icon :component="HappyOutline" size="20px" class="mr-[8px] cursor-pointer" />
+        <n-icon :component="HappyOutline" size="20px" class="mr-[8px] cursor-pointer" />
+        <n-icon :component="HappyOutline" size="20px" class="mr-[8px] cursor-pointer" />
+      </div>
       <div class="cursor-pointer">查看详情></div>
     </div>
   </div>
@@ -25,7 +30,6 @@
 <script lang='ts' setup>
 import { ref } from "vue";
 import { EllipsisHorizontal, HappyOutline } from '@vicons/ionicons5';
-import { Star28Regular, LikeOutlined } from "@vicons/antd";
 import img from "@/assets/img/logo.png";
 const postList = ref([
   { name: '张居正', id: 1, img: img, postTime: '2023 / 12 /08 13: 10:08', content: '2023小红书企业号运营规划报告 & 小红书', tag: '小红书' },

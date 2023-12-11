@@ -117,6 +117,7 @@ window.$message = useMessage();
 }
 
 .sidebar-wrap {
+
     z-index: 99;
     width: 260px;
     height: 100vh;
@@ -133,6 +134,10 @@ window.$message = useMessage();
 
     .n-menu .n-menu-item-content::before {
         border-radius: 21px;
+
+        .n-menu-item-content-header {
+            font-size: 18px;
+        }
     }
 
 
