@@ -43,7 +43,7 @@ const menuOptions = [
         label: 'Market',
         key: 'market',
         icon: () => h(HomeOutline),
-        href: '/',
+        href: '/market',
     },
     {
         label: 'Chat',
@@ -56,6 +56,18 @@ const menuOptions = [
         key: 'follower',
         icon: () => h(Hash),
         href: '/follower',
+    },
+    {
+        label: 'Following',
+        key: 'following',
+        icon: () => h(Hash),
+        href: '/following',
+    },
+    {
+        label: 'Profile',
+        key: 'profile',
+        icon: () => h(Hash),
+        href: '/profile',
     }
 ]
 
@@ -66,29 +78,6 @@ const renderMenuLabel = (option: AnyObject) => {
     return option.label;
 };
 const renderMenuIcon = (option: AnyObject) => {
-    if (option.key === 'messages') {
-        return h(
-            NBadge,
-            {
-                dot: true,
-                show: hasUnreadMsg.value,
-                processing: true,
-            },
-            {
-                default: () =>
-                    h(
-                        NIcon,
-                        {
-                            color:
-                                option.key === selectedPath.value
-                                    ? 'var(--n-item-icon-color-active)'
-                                    : 'var(--n-item-icon-color)',
-                        },
-                        { default: option.icon }
-                    ),
-            }
-        );
-    }
     return h(NIcon, null, { default: option.icon });
 };
 
@@ -104,7 +93,7 @@ const goHome = () => {
     if (route.path === '/') {
         store.commit('refresh');
     }
-    goRouter('market');
+    goRouter('home');
 };
 const triggerAuth = (key: string) => {
     store.commit('triggerAuth', true);
@@ -129,7 +118,7 @@ window.$message = useMessage();
 
 .sidebar-wrap {
     z-index: 99;
-    width: 200px;
+    width: 260px;
     height: 100vh;
     position: fixed;
     left: 0;
@@ -139,7 +128,8 @@ window.$message = useMessage();
     max-height: calc(100vh);
     /* 调整高度 */
     overflow: auto;
-    background-color: darkgrey;
+    background-color: #000000;
+    ;
 
     .n-menu .n-menu-item-content::before {
         border-radius: 21px;

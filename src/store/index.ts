@@ -4,7 +4,7 @@ export default createStore({
   state: {
     refresh: Date.now(),
     refreshTopicFollow: Date.now(),
-    theme: localStorage.getItem("THEME"),
+    theme: localStorage.getItem("THEME") || 'dark',
     collapsedLeft: document.body.clientWidth <= 821,
     collapsedRight: document.body.clientWidth <= 821,
     drawerModelShow: document.body.clientWidth <= 821,
