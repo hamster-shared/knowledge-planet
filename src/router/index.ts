@@ -3,10 +3,18 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
+    name: "home",
+    meta: {
+      title: "home",
+      keepAlive: true,
+    },
+    component: () => import("@/views/home/index.vue"),
+  },
+  {
+    path: "/market",
     name: "market",
     meta: {
       title: "market",
-      keepAlive: true,
     },
     component: () => import("@/views/market/index.vue"),
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-[#fff]">market</div>
+  <div>market</div>
 </template>
 <script lang='ts' setup>
 </script>
