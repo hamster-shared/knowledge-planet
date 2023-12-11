@@ -29,7 +29,7 @@
     </div>
     <div class="title mt-[40px]">Your Follower</div>
     <div class="grid grid-cols-4 gap-[30px]">
-      <div class="card-div justify-center items-center">
+      <div class="card-div items-center justify-between">
         <img src="@/assets/img/following-tweets.jpeg" class="fllower-img" />
         <div class="fllower-title">Papaya</div>
         <div class="fllower-btn">Follow</div>
