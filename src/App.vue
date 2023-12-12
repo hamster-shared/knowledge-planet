@@ -32,13 +32,13 @@ const store = useStore();
 const theme = computed(() => (store.state.theme === 'dark' ? darkTheme : null));
 const themeOverrides: GlobalThemeOverrides = {
     common: {
-        primaryColor: '#C256FF',
-        primaryColorHover: '#C256FF',
+        primaryColor: '#8D72FF',
+        primaryColorHover: '#8D72FF',
     },
     Select: {
         peers: {
             InternalSelection: {
-                textColor: '#C256FF',
+                textColor: '#8D72FF',
             },
         }
     },

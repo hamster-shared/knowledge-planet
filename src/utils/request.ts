@@ -8,8 +8,8 @@ const service = axios.create({
 service.interceptors.request.use(
     config => {
         // 鉴权Header
-        if (localStorage.getItem('PAOPAO_TOKEN')) {
-            (config.headers as any)['Authorization'] = 'Bearer ' + localStorage.getItem('PAOPAO_TOKEN');
+        if (localStorage.getItem('TOKEN')) {
+            (config.headers as any)['Authorization'] = 'Bearer ' + localStorage.getItem('TOKEN');
         }
 
         return config;
@@ -32,14 +32,14 @@ service.interceptors.response.use(
         const { response = {} } = error || {};
         // 重定向
         if (+response?.status === 401) {
-            localStorage.removeItem('PAOPAO_TOKEN');
+            // localStorage.removeItem('TOKEN');
 
-            if (response?.data.code !== 10005) {
+            // if (response?.data.code !== 10005) {
                 window.$message.warning(response?.data.msg || '鉴权失败');
-            } else {
-                // 打开登录弹窗
-                window.$store.commit('triggerAuth', true);
-            }
+            // } else {
+            //     // 打开登录弹窗
+            //     window.$store.commit('triggerAuth', true);
+            // }
         } else {
             window.$message.error(response?.data?.msg || '请求失败');
         }
