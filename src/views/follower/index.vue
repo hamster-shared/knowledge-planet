@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-[30px]">
     <div class="title">Trending</div>
     <div class="grid grid-cols-3 gap-[50px]">
       <div class="card-div">
